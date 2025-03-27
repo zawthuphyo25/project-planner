@@ -1,15 +1,16 @@
 <template>
-  <div class="project">
+  <div class="project" :class="{ complete: project.complete }">
     <div class="flexing">
       <h3 @click="showDetail = !showDetail">{{ project.title }}</h3>
       <div>
         <i class="ri-delete-bin-2-fill icon" @click="deleteProject"></i>
         <i class="ri-pencil-fill icon"></i>
-        <i class="ri-check-fill icon"></i>
+        <i class="ri-check-fill icon" @click="completeProject"></i>
       </div>
     </div>
 
     <p v-if="showDetail">{{ project.detail }}</p>
+    {{ project.complete }}
   </div>
 </template>
 
@@ -30,6 +31,25 @@ export default {
       fetch(deleteRoute, { method: "DELETE" })
         .then(() => {
           this.$emit("delete", this.project.id);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    completeProject() {
+      let updateCompleteRoute = this.api + this.project.id;
+      // console.log(updateCompleteRoute);
+      fetch(updateCompleteRoute, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          complete: !this.project.complete,
+        }),
+      })
+        .then(() => {
+          this.$emit("complete", this.project.id);
         })
         .catch((err) => {
           console.log(err);
@@ -63,5 +83,8 @@ h3 {
 }
 .icon:hover {
   color: #777;
+}
+.complete {
+  border-left-color: green;
 }
 </style>

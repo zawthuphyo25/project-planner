@@ -3,7 +3,11 @@
     <h1>Home</h1>
     <div v-for="project in projects" :key="project.id">
       <!-- {{ project }} -->
-      <SingleProject :project="project" @delete="deleteProject"></SingleProject>
+      <SingleProject
+        :project="project"
+        @delete="deleteProject"
+        @complete="completeProject"
+      ></SingleProject>
     </div>
   </div>
 </template>
@@ -18,7 +22,7 @@ export default {
   },
   data() {
     return {
-      projects: [],
+      projects: [], //[{},{},{}]
     };
   },
   methods: {
@@ -26,6 +30,12 @@ export default {
       this.projects = this.projects.filter((project) => {
         this.project.id != id;
       });
+    },
+    completeProject(id) {
+      let findPrject = this.projects.find((project) => {
+        return project === id;
+      });
+      findProject.complete = !findPrject.commplete;
     },
   },
   mounted() {

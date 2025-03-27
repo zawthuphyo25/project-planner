@@ -3,12 +3,14 @@
     {
       "title": "ptoject title 1",
       "detail": "projecr detail 1",
-      "id": "1"
+      "id": "1",
+      "complete": true
     },
     {
       "title": "ptoject title 2",
       "detail": "projecr detail 2",
-      "id": "2"
+      "id": "2",
+      "complete": true
     }
   ]
 }
