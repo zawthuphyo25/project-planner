@@ -10,6 +10,13 @@
       "id": "aa1d",
       "title": "Vue.js",
       "detail": "Hello Vue3!",
+      "compile": false,
+      "complete": true
+    },
+    {
+      "id": "7049",
+      "title": "Homework",
+      "detail": "Do you finish homework today?",
       "compile": false
     }
   ]
