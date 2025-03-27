@@ -3,8 +3,13 @@
     <div class="flexing">
       <h3 @click="showDetail = !showDetail">{{ project.title }}</h3>
       <div>
+        <!-- Delete Project -->
         <i class="ri-delete-bin-2-fill icon" @click="deleteProject"></i>
-        <i class="ri-pencil-fill icon"></i>
+        <!-- Edit Project -->
+        <router-link :to="{ name: 'editProject', params: { id: project.id } }">
+          <i class="ri-pencil-fill icon"></i>
+        </router-link>
+        <!-- Complete Project -->
         <i class="ri-check-fill icon" @click="completeProject"></i>
       </div>
     </div>
@@ -85,5 +90,9 @@ h3 {
 }
 .complete {
   border-left-color: green;
+}
+a {
+  text-decoration: none;
+  color: #2c3e50;
 }
 </style>
