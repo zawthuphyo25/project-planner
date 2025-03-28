@@ -32,14 +32,14 @@ export default {
   methods: {
     deleteProject(id) {
       this.projects = this.projects.filter((project) => {
-        this.project.id != id;
+        return project.id != id;
       });
     },
     completeProject(id) {
-      let findPrject = this.projects.find((project) => {
-        return project === id;
+      let findProject = this.projects.find((project) => {
+        return project.id === id;
       });
-      findProject.complete = !findPrject.commplete;
+      findProject.complete = !findProject.complete;
     },
   },
   computed: {

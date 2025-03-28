@@ -1,22 +1,29 @@
 {
   "projects": [
     {
-      "title": "Hello",
-      "detail": "How are you today?",
-      "id": "1",
-      "complete": true
-    },
-    {
-      "id": "aa1d",
-      "title": "Vue.js",
-      "detail": "Hello Vue3!",
+      "id": "b8e2",
+      "title": "Basic web dev!",
+      "detail": "Learning Html, Css, and Js.",
       "compile": false,
       "complete": true
     },
     {
-      "id": "7049",
-      "title": "Homework",
-      "detail": "Do you finish homework today?",
+      "id": "8959",
+      "title": "Tailwind Css",
+      "detail": "Do you had learn Css framework!",
+      "compile": false,
+      "complete": true
+    },
+    {
+      "id": "b334",
+      "title": "Vue",
+      "detail": "Hello Vue3!",
+      "compile": false
+    },
+    {
+      "id": "6cdd",
+      "title": "Laravel",
+      "detail": "What is Laravel?",
       "compile": false
     }
   ]
